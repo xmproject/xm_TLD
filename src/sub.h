@@ -19,8 +19,8 @@ public:
      
      cv::Rect box;
      bool file;
-     bool chatterCallback(follower::pubdata::Request  &req,
-             follower::pubdata::Response &res);
+     bool chatterCallback(xm_TLD::pubdata::Request  &req,
+             xm_TLD::pubdata::Response &res);
 };
 
 #endif

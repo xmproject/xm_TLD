@@ -126,7 +126,7 @@ public:
   //Methods
   ros::NodeHandle main;
   ros::Subscriber boxdata;
-  void chatterCallback(const follower::box& msg);
+  void chatterCallback(const xm_TLD::box& msg);
   void init(const cv::Mat& frame1,const cv::Rect &box, FILE* bb_file);
   void generatePositiveData(const cv::Mat& frame, int num_warps);
   void generateNegativeData(const cv::Mat& frame);

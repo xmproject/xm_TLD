@@ -19,7 +19,7 @@ TLD::TLD()
 TLD::TLD(int sss){
   read(sss);
 }
-void TLD::chatterCallback(const follower::box& msg)
+void TLD::chatterCallback(const xm_TLD::box& msg)
 {
   rightbox.x=msg.x;
   rightbox.y=msg.y;
@@ -236,10 +236,10 @@ double TLD::getVar(const BoundingBox& box,const Mat& sum,const Mat& sqsum){
 void TLD::processFrame(const cv::Mat& img1,const cv::Mat& img2,vector<Point2f>& points1,vector<Point2f>& points2,BoundingBox& bbnext,bool& lastboxfound, bool tl, FILE* bb_file){
 
   boxfile=true;
-  ros::Publisher givedata=main.advertise<follower::num>("tld_people_position_estimation",1000);
+  ros::Publisher givedata=main.advertise<xm_TLD::num>("tld_people_position_estimation",1000);
   tldboxfile=false;
 
-  follower::num data;
+  xm_TLD::num data;
   vector<BoundingBox> cbb;
   vector<float> cconf;
   int confident_detections=0;

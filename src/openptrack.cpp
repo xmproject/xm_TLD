@@ -56,8 +56,8 @@ void openptrack::chatterCallback(const opt_msgs::TrackArray& msg)
    	ROS_INFO("%s", massg.data.c_str());
 	while(1)
 	{
-		client = main.serviceClient<follower::pubdata>("givedata");
-		follower::pubdata srv;
+		client = main.serviceClient<xm_TLD::pubdata>("givedata");
+		xm_TLD::pubdata srv;
 		srv.request.a=massg.data;
 		if (client.call(srv))
   		{

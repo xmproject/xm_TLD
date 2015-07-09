@@ -30,7 +30,7 @@ public:
 	int id;
 	ros::Subscriber track;
 	opt_msgs::TrackArray  swap;
-	void tldCallback(const follower::num& msg);
+	void tldCallback(const xm_TLD::num& msg);
 	void Callback(const opt_msgs::TrackArray& msg);
 	void legCallback(const people_msgs::PositionMeasurementArray& msg);
 	

@@ -6,7 +6,7 @@ control::control(int s)
 {
 	id=s;
 	givedata=m.advertise<people_msgs::PositionMeasurement>("people_position_estimation",1);
-	boxdata=m.advertise<follower::box>("boxdata",1);
+	boxdata=m.advertise<xm_TLD::box>("boxdata",1);
 	track=m.subscribe("/tracker/tracks_smoothed",1,&control::Callback,this);
 	tlddata=m.subscribe("tld_people_position_estimation",1,&control::tldCallback,this);
 	legdata=m.subscribe("people_tracker_measurements",1,&control::legCallback,this);
@@ -14,7 +14,7 @@ control::control(int s)
 	tldfile=false;
 	legfile=false;
 }
-void control::tldCallback(const follower::num& msg)
+void control::tldCallback(const xm_TLD::num& msg)
 {
 	//int i;
 	/*if(msg.a==0)
@@ -136,7 +136,7 @@ void control::Callback(const opt_msgs::TrackArray& msg)
 		//data.people[0].position.z=msg.tracks[k].distance;
 		//data.people[0].reliability=float(msg.tracks[k].id);
 		givedata.publish(data);
-		follower::box box;
+		xm_TLD::box box;
 		box.x=msg.tracks[k].box_2D.x;
 		box.y=msg.tracks[k].box_2D.y;
 		box.width=msg.tracks[k].box_2D.width;
@@ -150,7 +150,7 @@ void control::Callback(const opt_msgs::TrackArray& msg)
 	{
 		swap=msg;
 		tldfile=true;
-		follower::box box;
+		xm_TLD::box box;
 		box.x=0;
 		box.y=0;
 		box.width=0;

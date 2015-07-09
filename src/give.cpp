@@ -8,8 +8,8 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "give");
   
   ros::NodeHandle n;
-  ros::ServiceClient client = n.serviceClient<follower::array>("serve");
-  follower::array  srv;
+  ros::ServiceClient client = n.serviceClient<xm_TLD::array>("serve");
+  xm_TLD::array  srv;
   srv.request.a = 1;
   
   if (client.call(srv))

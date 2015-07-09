@@ -15,8 +15,8 @@ sub::sub()
 sub::~sub()
 {
 }
-bool sub::chatterCallback(follower::pubdata::Request  &req,
-             follower::pubdata::Response &res)
+bool sub::chatterCallback(xm_TLD::pubdata::Request  &req,
+             xm_TLD::pubdata::Response &res)
 {
   ROS_INFO("I heard: [%s]", req.a.c_str());
   string line=req.a;

@@ -9,8 +9,8 @@
 #include <std_msgs/String.h>
 #include "reading_image.h"
 #include "sub.h"
-#include "follower/num.h"
-#include "follower/pubdata.h"
+#include "xm_TLD/num.h"
+#include "xm_TLD/pubdata.h"
 using namespace cv;
 using namespace std;
 //Global variables
@@ -117,8 +117,8 @@ int main(int argc, char * argv[])
     
     //ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("cmd_vel_mux/input/teleop", 200);
     //ros::Publisher dep_pub = n.advertise<geometry_msgs::Twist>("/average_depth", 200);
-    ros::Publisher givedata=n.advertise<follower::num>("tld_people_position_estimation",1000);
-    follower::num data;
+    ros::Publisher givedata=n.advertise<xm_TLD::num>("tld_people_position_estimation",1000);
+    xm_TLD::num data;
     //FileStorage fs;
     //fs.open("/home/cuiyufang/catkin_ws/src/follower/src/parameters.yml", FileStorage::READ);
     TLD tld;

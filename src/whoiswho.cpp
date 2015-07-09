@@ -13,7 +13,7 @@ void chatterCallback(const opt_msgs::TrackArray& msg)
 	data=msg;
 		
 }	
-bool response(follower::array::Request &req,follower::array::Response &res)
+bool response(xm_TLD::array::Request &req, xm_TLD::array::Response &res)
 {
 	
 	res.array=data;

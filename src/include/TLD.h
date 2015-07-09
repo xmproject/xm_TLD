@@ -5,8 +5,8 @@
 #include <fstream>
 #include <opencv2/legacy/legacy.hpp>
 #include <ros/ros.h>
-#include "follower/num.h"
-#include <follower/box.h>
+#include "xm_TLD/num.h"
+#include <xm_TLD/box.h>
 
 //Bounding Boxes
 struct BoundingBox : public cv::Rect {
